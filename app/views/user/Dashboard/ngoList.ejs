@@ -1,0 +1,68 @@
+<%- include('../layout/admin') %>
+<section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Ngo List</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Sno.</th>
+                  <th>Name</th>
+                  <th>Established</th>
+                  <th>Country</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                  <% var n = 1 %>
+                  <% ngo.forEach(function(ngo){  %>
+                  <tr>
+
+                    <td><%= n %></td>
+                    <td><%= ngo.name %></td>
+                    <td><%= ngo.estd %></td>
+                    <td><%= ngo.country %></td>
+                    <td><a href="/" class="btn btn-info"><i class="fa fa-arrow" aria-hidden="true">Donate</a></td>
+
+                      <tr>
+                        <% n++ %>
+                  <% }) %>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Sno.</th>
+                  <th>Name</th>
+                  <th>Established</th>
+                  <th>Country</th>
+                  <th></th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+</div>
+</div>
+</section>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+  </script>
+  <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<%- include('../layout/footer') %>

@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Donngo | Connecting NGOs to people</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../css/admin_login.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+<body id=""style=" background: url(../images/banner4.jpg)">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h3 >Sign In </h3>
+
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <h4>DONGO</h4>
+        <!-- <img src="/images/svg/icon.svg" id="icon" alt="User Icon" style="width: 100px ; height:100px;" /> -->
+      </div>
+
+      <form action="/login" method="post">
+
+        <input type="text" id="login" class="" name="email" placeholder="Email">
+        <input type="password" id="password" class="" name="password" placeholder="password">
+        <input type="submit" class="" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="/auth/forget">Forgot Password?</a>
+        &nbsp;
+        <a class="underlineHover" href="/register">Sign Up</a>
+      </div>
+
+
+    </div>
+  </div>
+</body>
+</html>

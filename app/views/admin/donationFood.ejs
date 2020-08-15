@@ -1,0 +1,69 @@
+<%- include('./layout/admin') %>
+<section class="content">
+     
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Food Donated</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Sno.</th>
+            <th>Ngo</th>
+            <th>Food type</th>
+            <th>Date</th>
+          </tr>
+          </thead>
+          <tbody>
+            <% var n = 1 %>
+            <% food.forEach(function(food){  %>
+              
+            <tr>
+
+              <td><%= n %></td>
+              <td><%= ngo.name %></td>
+              <td><%= food.food_type %></td>
+              <td><%= food.date %></td>
+                <tr>
+                  <% n++ %>
+           
+              <% }) %>
+
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>Sno.</th>
+            <th>Ngo</th>
+            <th>Food type</th>
+            <th>Date</th>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+</div>
+</div>
+
+
+</section>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+  </script>
+  <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<%- include('./layout/footer') %>

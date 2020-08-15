@@ -1,0 +1,102 @@
+<%- include('../layout/admin') %>
+<section class="content">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <!-- Profile Image -->
+    <div class="col-md-6">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+         <h3 class="profile-username text-center">  Utilities Donation</h3>
+
+        <form class="form-horizontal" action="/utilities" method="post">
+               <div class="form-group">
+                 <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                 <div class="col-sm-10">
+                   <input type="text" class="form-control" name="name" value="<%= user.name %>" placeholder="Name" >
+                 </div>
+               </div>
+
+               <div class="form-group">
+                 <label for="inputSkills" class="col-sm-2 control-label">Contact no</label>
+
+                 <div class="col-sm-10">
+                   <input type="text" class="form-control" name="contactNo" value="<%= user.contactNo %>" placeholder="Contact no">
+                 </div>
+               </div>
+
+               <div class="form-group">
+                 <label for="inputSkills" class="col-sm-2 control-label">Description</label>
+
+                 <div class="col-sm-10">
+                   <input type="text" class="form-control" name="desc"  placeholder="Description">
+                 </div>
+               </div>
+               <div class="form-group">
+                 <label for="inputSkills" class="col-sm-2 control-label">Quantity</label>
+
+                 <div class="col-sm-10">
+                   <input type="text" class="form-control" name="quantity"  placeholder="Quantity">
+                 </div>
+               </div>
+               <div class="form-group">
+                  <label for="inputSkills" class="col-sm-2 control-label">NGO</label>
+                   <div class="col-sm-10">
+
+                     <select  name="ngo_id" class="form-control select2" style="width: 100%;">
+                       <option selected="selected">Seleect NGO</option>
+                       <% ngo.forEach(function(ngo){  %>
+                      <option value="<%= ngo._id %>"><%= ngo.name %></option>
+                       <% }) %>
+
+                     </select>
+                    </div>
+
+              </div>
+               <div class="form-group">
+                 <label for="inputSkills" class="col-sm-2 control-label">Usage</label>
+
+                 <div class="col-sm-10">
+                   <input type="text" class="form-control" name="Usage"  placeholder="Usage">
+                 </div>
+               </div>
+
+               <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-10">
+                   <button type="submit" class="btn btn-danger">Donate</button>
+                 </div>
+               </div>
+             </form>
+      </div>
+      <!-- /.box-body -->
+    </div>
+
+     <!-- /.box -->
+
+</div>
+        <div class="col-md-3">
+
+        </div>
+
+</div>
+
+
+</section>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+  </script>
+  <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<%- include('../layout/footer') %>

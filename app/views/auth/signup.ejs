@@ -1,0 +1,50 @@
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Donngo | Donate what you don't want.</title>
+    <!-- Tell the browser to be responsive to screen width -->
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../css/admin_login.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body style=" background: url(../images/banner4.jpg)">
+  <div class="wrapper fadeInDown">
+
+    <div id="formContent" style="margin:10px;">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign Up</h2>
+      <%if( !(typeof(errors) =="undefined")){%>
+
+              <% errors.forEach(function(errors){ %>
+              <div class= "alert alert-danger" >  <%= errors.text%> </div>
+             <% }) %>
+      <%}%>
+      <%- include('../include/messages') %>
+      <!-- Icon -->
+
+      <!-- Login Form -->
+      <form method="post" action="/register">
+        <input type="text" id="login" class="" name="name" placeholder="Name" >
+        <input type="email" id="password" class="" name="email" placeholder="Email" >
+
+        <input type="text" id="login" class="" name="age" placeholder="Age">
+          <input type="text" id="login" class="" name="contactNo" placeholder="Contact No">
+        <input type="password" id="password" class="" name="password" placeholder="Password">
+        <input type="password" id="password" class="" name="password2" placeholder="Confirm Password">
+        <button  class="" >Sign Up</button>
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <p>Already signUp</p>
+        <a class="underlineHove" href="/login">Login</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
